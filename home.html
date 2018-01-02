@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="Scripts/angular.min.js"></script>
+
+    <style>
+        .red
+        {
+            color : red;
+        }
+    </style>
+</head>
+<body ng-app="">
+    <p> Hello!... {{mname}}</p>
+    <input type="text" ng-model="mname" />
+    <br/>
+    <br/>
+
+    <div ng-init="name = 'Welcome'">
+        <p ng-bind="name"></p>
+        <!--{{ name}}-->
+    </div>
+    <br/>
+
+    <div ng-init="Number=0">
+        <button ng-click="Number=Number+1"> +1 </button>
+        <button ng-click="Number=Number-1"> -1 </button>
+        <p>{{Number}}</p>
+    </div>
+
+    <div>
+        <p>Show me the Paragraph<input type="checkbox" ng-model="Isselected" /></p>
+        <p ng-show="Isselected">Sachin Ramesh Tendulkar (/ˌsətʃɪn tɛnˈduːlkər/ (About this sound listen); born 24 April 1973) is a former Indian cricketer and a former captain, widely regarded as the greatest batsman of all time.[4] The highest run scorer of all time in International cricket, Tendulkar took up cricket at the age of eleven, made his Test debut on 15 November 1989 against Pakistan in Karachi at the age of sixteen, and went on to represent Mumbai domestically and India internationally for close to twenty-four years. He is the only player to have scored one hundred international centuries, the first batsman to score a double century in a One Day International, the holder of the record for the most number of runs in both ODI and Test cricket, and the only player to complete more than 30,000 runs in international cricket</p>
+    </div>
+    <div ng-init="number=19">
+        <input type="text" ng-model="guess" ng-class="{red : guess != number}"/>
+        
+    </div>
+    <div ng-init="numbers=[1,2,3,4,5,6,7,8]">
+        <ul>
+            <li ng-repeat="number in numbers" ng-class="{red}" ng-class-odd="{red}">{{number}} </li>
+        </ul>
+
+    </div>
+</body>
+</html>
